@@ -20,8 +20,8 @@ class Conpak extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Isikan Gambar</div>');
 		redirect(base_url('admin/paket'));
 		}else{
-			$config['allowed_types'] = 'gif|jpg|png|webp';
-			$config['max_size']      = '10240';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+			$config['max_size']      = '15360';
 			$config['upload_path'] = './assets/paket/';
 
 			$this->load->library('upload', $config);
@@ -47,7 +47,14 @@ class Conpak extends CI_Controller {
     public function editPaket(){
         $nama_paket = $this->input->post('nama_paket');
         $id_paket = $this->input->post('id_paket');
-        $deskripsi = $this->input->post('deskripsi');
+
+		$slug1 = preg_replace('/[^A-Za-z0-9\-]/', '_', $nama_paket);
+		$slug2 =  str_replace(' ', '-', $slug1);
+
+        // convert text pinddah line
+		$text = $this->input->post('deskripsi');
+        $deskripsi = nl2br($text);
+
         $id_kategori = $this->input->post('id_kategori');
         $harga = $this->input->post('harga');
         $durasi = $this->input->post('durasi');
@@ -59,7 +66,8 @@ class Conpak extends CI_Controller {
             'ket_paket' => $deskripsi,
             'harga' => $harga,
             'durasi' => $durasi,
-            'orang' => $orang
+            'orang' => $orang,
+			'slug' => $slug2
 		);
 		$this->db->set($data);
 		$this->db->where('id_paket', $id_paket);
@@ -86,8 +94,8 @@ class Conpak extends CI_Controller {
 		if ($gambar_p=''){
             redirect(base_url('admin/paket'));
 		}else{
-			$config['allowed_types'] = 'gif|jpg|png|webp';
-			$config['max_size']      = '5120';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+			$config['max_size']      = '15360';
 			$config['upload_path'] = './assets/paket/';
 
 			$this->load->library('upload', $config);
@@ -110,18 +118,6 @@ class Conpak extends CI_Controller {
 		$this->db->update('tb_paket');
 		redirect(base_url('admin/paket'));
     }
-
-	public function detail_paket($p){
-
-		$data['title'] = 'Detail Paket Wisata';
-		$this->load->model('Destinasi_model', 'destinasi');
-		$data['paket'] = $this->destinasi->getPaket($p);
-		
-
-		$this->load->view('hero/template/header', $data);
-		$this->load->view('hero/detail_paket');
-		$this->load->view('hero/template/footer');
-	}
 
 
 }

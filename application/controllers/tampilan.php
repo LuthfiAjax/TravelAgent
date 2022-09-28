@@ -78,7 +78,7 @@ class Tampilan extends CI_Controller {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wajib ada foto/div>');
                 redirect(base_url('tampilan/testimoni'));
             }else{
-                $config['allowed_types'] = 'gif|jpg|png|webp';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
                 $config['max_size']      = '5120';
                 $config['upload_path'] = './assets/testimoni/';
 

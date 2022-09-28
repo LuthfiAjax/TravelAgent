@@ -25,13 +25,20 @@ class Condes extends CI_Controller {
 	public function update_destinasi(){
 		$id_wisata = $this->input->post('id_wisata');
 		$nama_wisata = $this->input->post('nama_wisata');
-		$ket_wisata = $this->input->post('ket_wisata');
+
+		$slug = str_replace(' ', '-', $nama_wisata);
+
+		// convert text pinddah line
+		$text = $this->input->post('ket_wisata');
+		$ket_wisata = nl2br($text);
+
 		$id_lokasi = $this->input->post('id_lok');
 
 		$data = array(
 			'nama_wisata' => $nama_wisata,
 			'id_lokasi' => $id_lokasi,
-			'Ket_wisata' => $ket_wisata
+			'Ket_wisata' => $ket_wisata,
+			'slug'=> $slug
 		);
 		$this->db->set($data);
 		$this->db->where('id_wisata', $id_wisata);
@@ -45,11 +52,11 @@ class Condes extends CI_Controller {
 		$gambar_w = $_FILES['gambar_w'];
 		$_id = $this->db->get_where('tb_destinasi',['id_wisata' => $id_wisata])->row();
 
-		if ($gambar_w=''){
+		if (!$gambar_w){
 			redirect(base_url('admin/destinasi'));
 		}else{
-			$config['allowed_types'] = 'gif|jpg|png|webp';
-			$config['max_size']      = '5120';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+			$config['max_size']      = '15360';
 			$config['upload_path'] = './assets/destination/';
 
 			$this->load->library('upload', $config);
@@ -81,8 +88,8 @@ class Condes extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Isikan Gambar</div>');
 		redirect(base_url('admin/destinasi'));
 		}else{
-			$config['allowed_types'] = 'gif|jpg|png|webp';
-			$config['max_size']      = '10240';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+			$config['max_size']      = '15360';
 			$config['upload_path'] = './assets/destination/';
 
 			$this->load->library('upload', $config);

@@ -65,14 +65,80 @@ class Hero extends CI_Controller {
 		$this->load->view('hero/template/footer');
 	}
 
-	public function detail_mobil($m){
+	public function detail_mobil($id, $slug){
 		$data['title'] = 'Detail Sewa Mobil';
 		
-		$data['mobil'] = $this->db->get_Where('tb_mobil', array('id_mobil'=> $m))->result_array();
+		$data['mobil'] = $this->db->get_Where('tb_mobil', array('slug'=> $slug, 'id_mobil' => $id))->result_array();
 
 		$this->load->view('hero/template/header', $data);
 		$this->load->view('hero/detail_mobil');
 		$this->load->view('hero/template/footer');
+	}
+
+	public function detail_paket($p){
+
+		$data['title'] = 'Detail Paket Wisata';
+		$this->load->model('Destinasi_model', 'destinasi');
+		$data['paket'] = $this->destinasi->getPaket($p);
+		
+
+		$this->load->view('hero/template/header', $data);
+		$this->load->view('hero/detail_paket');
+		$this->load->view('hero/template/footer');
+	}
+
+	public function reviews(){
+
+		$data['title'] = 'Review Pelanggan';
+		
+		$this->load->view('hero/template/header', $data);
+		$this->load->view('hero/reviews');
+		$this->load->view('hero/template/footer');
+	}
+
+	public function add(){
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('profesi', 'Profesi', 'required|trim');
+		$this->form_validation->set_rules('pesan', 'Pesan', 'required|trim');
+		$this->form_validation->set_rules('medsos', 'Medsos', 'required|trim');
+		$this->form_validation->set_rules('akun', 'Akun', 'required|trim');
+
+		$nama = $this->input->post('nama');
+		$Profesi = $this->input->post('profesi');
+		$pesan = $this->input->post('pesan');
+		$medsos = $this->input->post('medsos');
+		$akun = $this->input->post('akun');
+		$gambar_t = $_FILES['gambar_t'];
+
+		if (!$gambar_t){
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wajib ada foto/div>');
+			redirect(base_url('hero/reviews'));
+		}else{
+			$config['allowed_types'] = 'gif|jpg|png|webp';
+			$config['max_size']      = '5120';
+			$config['upload_path'] = './assets/testimoni/';
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('gambar_t')){
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Patikan Format Gambar Benar</div>');
+				redirect(base_url('hero/reviews'));
+			}else{
+				$gambar_t=$this->upload->data('file_name');
+			}
+		}
+
+		$data = array (
+			'nama' => $nama,
+			'profesi' => $Profesi,
+			'pesan' => $pesan,
+			'medsos' => $medsos,
+			'akun' => $akun,
+			'gambar_t' => $gambar_t,
+			'status' => 'Non-Aktif'
+		);
+		$this->db->insert('tb_testimoni', $data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Testimoni Berhasil Ditambahkan</div>');
+		redirect(base_url('hero/reviews'));
 	}
 
 }

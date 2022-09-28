@@ -50,5 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'hero';
-$route['404_override'] = '';
+$route['404_override'] = 'Home';
 $route['translate_uri_dashes'] = FALSE;
+
+// url SEO
+$route['sewa-mobil/(:num)/(:any)'] = 'hero/detail_mobil/$1/$2';
+$route['paket-wisata-rehol-transport/(:num)/(:any)'] = 'hero/detail_paket/$1/$2';
+$route['destinasi-wista/rehol-transport/(:num)/(:any)/(:any)'] = 'hero/detail_destinasi/$1/$2';

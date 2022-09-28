@@ -99,7 +99,7 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="mb-3">
+                                <div class="custom-file mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Gambar Destinasi</label>
                                     <input class="form-control" type="file" id="formFile" name="gambar_w">
                                     <p class="text-danger">Format gambar jpg/png/gif/ dan max 5 mb
@@ -212,7 +212,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Deskripsi Destinasi</label>
                                     <textarea class="form-control" name="ket_wisata"
-                                        placeholder="Masukan Deskripsi Perusahaan"> <?= $d['ket_wisata']; ?></textarea>
+                                        placeholder="Masukan Deskripsi Perusahaan"> <?= str_replace('<br />', '', $d['ket_wisata']) ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Lokasi</label>

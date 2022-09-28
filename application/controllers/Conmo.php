@@ -16,7 +16,12 @@ class Conmo extends CI_Controller {
 		$id_mobil = $this->input->post('id_mobil');
 		$nama_mobil = $this->input->post('nama_mobil');
 		$kapasitas_orang = $this->input->post('kapasitas_orang');
-        $deskripsi = $this->input->post('deskripsi');
+		$slug =  str_replace(' ', '-', $nama_mobil);
+
+		// convert text pinddah line
+		$text = $this->input->post('deskripsi');
+        $deskripsi = nl2br($text);
+
 		$pemakaian = $this->input->post('pemakaian');
 		$harga = $this->input->post('harga');
 
@@ -25,7 +30,8 @@ class Conmo extends CI_Controller {
             'ket_mobil' => $deskripsi,
             'kapasitas' => $kapasitas_orang,
             'pemakaian' => $pemakaian,
-            'harga' => $harga
+            'harga' => $harga,
+			'slug' => $slug
 		);
 		$this->db->set($data);
 		$this->db->where('id_mobil', $id_mobil);
@@ -42,8 +48,8 @@ class Conmo extends CI_Controller {
 		if ($gambar_m=''){
             redirect(base_url('admin/mobil'));
 		}else{
-			$config['allowed_types'] = 'gif|jpg|png|webp';
-			$config['max_size']      = '5120';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+			$config['max_size']      = '15360';
 			$config['upload_path'] = './assets/mobil/';
 
 			$this->load->library('upload', $config);

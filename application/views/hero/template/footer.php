@@ -60,6 +60,12 @@
 <script src="<?= base_url('assets/cust/') ?>lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="<?= base_url('assets/cust/') ?>lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+<!-- AOS Libraries-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
 <!-- Contact Javascript File -->
 <script src="<?= base_url('assets/cust/') ?>mail/jqBootstrapValidation.min.js"></script>
 <script src="<?= base_url('assets/cust/') ?>mail/contact.js"></script>

@@ -8,10 +8,10 @@ function rupiah($angka){
 <div id="about" class="container-fluid py-5">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-lg-6" style="min-height: 500px;">
-                <div class="position-relative h-100">
+            <div class="col-lg-6">
+                <div class="position-relative">
                     <?php foreach($paket as $p) : ?>
-                    <img class="position-absolute w-100 h-100" src="<?= base_url('assets/paket/'.$p->gambar_kat); ?>"
+                    <img class="img-fluid position-relative" src="<?= base_url('assets/paket/'.$p->gambar_kat); ?>"
                         style="object-fit: cover;">
                     <?php endforeach; ?>
                 </div>
@@ -31,14 +31,14 @@ function rupiah($angka){
                         <?= $p->ket_paket; ?>
                     </p>
                     <div class="row mb-4">
-                        <div class="col-6">
-                            <img class="img-fluid" src="<?= base_url('assets/destination/'.$p->gambar_p); ?>" alt="">
+                        <div class="col-12">
+                            <img class="img-fluid " src="<?= base_url('assets/paket/'.$p->gambar_p); ?>" alt="">
                         </div>
                     </div>
                     <?php 
                     $pesan = "*Hallo Admin REHOLTransport*,
-                    Saya tertarik dengan paket wisata  *$p->nama_paket* 
-                    dari kategori *$p->nama_kategori*"
+Saya tertarik dengan paket wisata  *$p->nama_paket* 
+dari kategori *$p->nama_kategori*"
                     ?>
 
                     <a target="_blank" href="https://api.whatsapp.com/send/?phone=62811255661&text=

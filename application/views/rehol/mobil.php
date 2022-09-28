@@ -209,7 +209,7 @@ function rupiah($angka){
                                 <div class="mb-3">
                                     <label class="form-label">Deskripsi Destinasi</label>
                                     <textarea class="form-control" name="deskripsi"
-                                        placeholder="Masukan Deskripsi Perusahaan"><?= $m['ket_mobil']; ?></textarea>
+                                        placeholder="Masukan Deskripsi Perusahaan"><?= str_replace('<br />', '', $m['ket_mobil']) ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Harga Harian</label>

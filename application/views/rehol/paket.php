@@ -26,7 +26,7 @@ function rupiah($angka){
                     <table id="datatablesSimple">
                         <thead>
                             <tr align="center">
-                                <th>Name Paket</th>
+                                <th style="width:20%">Name Paket</th>
                                 <th>Kategori</th>
                                 <th>Harga</th>
                                 <th>Ganti Sampul</th>
@@ -35,7 +35,7 @@ function rupiah($angka){
                         </thead>
                         <tfoot>
                             <tr align="center">
-                                <th>Name Paket</th>
+                                <th style="width:20%">Name Paket</th>
                                 <th>Kategori</th>
                                 <th>Harga</th>
                                 <th>Ganti Sampul</th>
@@ -45,7 +45,7 @@ function rupiah($angka){
                         <tbody>
                             <?php foreach($paket as $p) : ?>
                             <tr align="center">
-                                <td><?= $p['nama_paket']; ?></td>
+                                <td style="width:20%"><?= $p['nama_paket']; ?></td>
                                 <td><?= $p['nama_kategori']; ?></td>
                                 <td><?= rupiah($p['harga'])  ?></td>
                                 <td>
@@ -229,7 +229,7 @@ function rupiah($angka){
                                 <div class="mb-3">
                                     <label class="form-label">Deskripsi Destinasi</label>
                                     <textarea class="form-control" name="deskripsi"
-                                        placeholder="Masukan Deskripsi Perusahaan"><?= $p['ket_paket']; ?></textarea>
+                                        placeholder="Masukan Deskripsi Perusahaan"><?=  str_replace('<br />', '', $p['ket_paket']) ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Kategori Paket</label>

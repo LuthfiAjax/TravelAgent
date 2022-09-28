@@ -9,8 +9,8 @@ function rupiah($angka){
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-            <h1>Top Tour Packages</h1>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Paket Wisata</h6>
+            <h1>Tentukan Tujuan Wisata Kalian</h1>
         </div>
         <div class="row d-flex justify-content-center" style=" min-height: 60px;">
             <div class="col-md-9">
@@ -19,7 +19,7 @@ function rupiah($angka){
                         <div class="mb-3 mb-md-0">
                             <form class="d-flex" role="search" method="POST" action="<?= base_url('hero/paket'); ?>">
                                 <select class="form-control me-2" aria-label="Default select example" name="keyword">
-                                    <option value="">-- Cari Paket --</option>
+                                    <option value="">-- Pilih Paket Wisata --</option>
                                     <?php foreach($kategori as $k) : ?>
                                     <option value="<?= $k['nama_kategori']; ?>"><?= $k['nama_kategori']; ?></option>
                                     <?php endforeach; ?>
@@ -33,9 +33,10 @@ function rupiah($angka){
         </div>
         <div class="row">
             <?php foreach($paket as $p) : ?>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
                 <div class="package-item bg-white mb-2">
-                    <a class="h5 text-decoration-none" href="<?= base_url('conpak/detail_paket/'.$p['id_paket']); ?>">
+                    <a class="h5 text-decoration-none"
+                        href="<?= base_url('paket-wisata-rehol-transport/'.$p['id_paket'].'/'.$p['slug']); ?>">
                         <img style="height: 200px; width: 350px;" class="img-fluid"
                             src="<?= base_url('assets/paket/'.$p['gambar_p']) ?>" alt="">
                     </a>
@@ -48,7 +49,7 @@ function rupiah($angka){
                                 Person</small>
                         </div>
                         <a class="h5 text-decoration-none"
-                            href="<?= base_url('conpak/detail_paket/'.$p['id_paket']); ?>"><?= $p['nama_paket']; ?></a><br>
+                            href="<?= base_url('paket-wisata-rehol-transport/'.$p['id_paket'].'/'.$p['slug']); ?>"><?= $p['nama_paket']; ?></a><br>
                         <div class="border-top mt-4 pt-4">
                             <small class="mt-3"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $p['durasi']; ?>
                                 days</small>

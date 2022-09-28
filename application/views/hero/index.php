@@ -10,21 +10,35 @@ function rupiah($angka){
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="<?= base_url('assets/cust/') ?>img/carousel-1.jpg" alt="Image">
+                <img class="w-100" src="<?= base_url('assets/slide/') ?>travel.webp" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                        <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
+                        <h1 class="display-3 text-white mb-md-4">Tour Packages According to Your Needs</h1>
+                        <a href="<?= base_url('hero/paket'); ?>" class="btn btn-primary py-md-3 px-md-5 mt-2">Checked
+                            Now</a>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="<?= base_url('assets/cust/') ?>img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="<?= base_url('assets/slide/') ?>1.png" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                        <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                        <h4 class="text-white text-uppercase mb-md-3">Destination for Having fun</h4>
+                        <h1 class="display-3 text-white mb-md-4">Choose Your Dream Travel Destination</h1>
+                        <a href="<?= base_url('hero/destination'); ?>"
+                            class="btn btn-primary py-md-3 px-md-5 mt-2">Checked Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="<?= base_url('assets/slide/') ?>2.png" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-md-3">Booking Cars</h4>
+                        <h1 class="display-3 text-white mb-md-4">Use Your Mainstay Car To Travel</h1>
+                        <a href="<?= base_url('hero/bookingmobil'); ?>"
+                            class="btn btn-primary py-md-3 px-md-5 mt-2">Booking Now</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +58,7 @@ function rupiah($angka){
 <!-- Carousel End -->
 
 <!-- About Start -->
-<div id="about" class="container-fluid py-5">
+<div id="about" class="container-fluid py-5" data-aos="fade-in">
     <div class="container pt-5">
         <div class="row">
             <div class="col-lg-6" style="min-height: 500px;">
@@ -56,32 +70,31 @@ function rupiah($angka){
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
                 <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
-                    <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                    <p class="text-justify">REHOL TRANSPORT menyediakan layanan Paket Wisata Jogja, Sewa Mobil dan
-                        Informasi wisata di Jogja.
-                        Rasakan Petualangan (adventure) di Jogja bersama kami, pastikan liburan anda bersama guide dan
-                        driver yang ramah dan berkualitas.</p>
-                    <p class="text-justify">
-                        Layanan kami yang profesional dan ramah akan memastikan anda memiliki liburan yang memuaskan dan
-                        pengalaman yang tidak terlupakan bersama orang terdekat.
+                    <h6 class="text-primary text-uppercase text-center" style="letter-spacing: 5px;">Tentang Kami</h6>
+                    <h1 class="mb-3 text-center" style="font-family: Jockey One;">We Provide Best Tour Packages In Your
+                        Budget</h1>
+                    <p data-aos="zoom-out" class="text-center"> <b>REHOL TRANSPORT</b> menyediakan layanan Paket
+                        Wisata , Sewa Mobil dan Informasi Wisata. Kami memiliki tarif standar dan ramah di kantong,
+                        sehingga kalian bisa merasakan liburan bersama kami, dengan guide dan driver yang ramah dan
+                        berkualitas.</p>
+                    <p data-aos="zoom-out" class="text-center">
+                        Kami mengutamakan Pelayanan yang profesional dan keramahan sesuai karakter kota Jogja,
+                        sehingga akan memberikan kesan dan pengalaman yang istimewa.
                     </p>
-                    <p class="text-justify">
-                        Rehol Transport telah berpengalaman dalam bidang pariwisata, telah melayani wisatawan domestik
-                        dan wisatawan mancanegara dari berbagai belahan dunia.
+                    <p data-aos="zoom-out" class="text-center">
+                        <b>Rehol Transport</b> telah berpengalaman dalam bidang pariwisata dan telah melayani wisatawan
+                        domestik ataupun mancanegara. Standar pelayanan kami telah terbukti memberikan kepuasan bagi
+                        wisatawan, karena semua itu kami persiapkan dengan baik demi kenyamanan dan kepuasan selama
+                        liburan bersama kami.
                     </p>
-                    <p class="text-justify">
-                        Standar layanan tinggi kami telah terbukti memberikan kepuasan bagi Traveller yang telah
-                        dilayani secara istimewa oleh staff, Driver, Tour Guide dan semua kami persiapkan dengan baik
-                        demi kenyamanan dan kepuasan selama trip di Jogja.</p>
                     <div class="row mb-4">
                         <div class="col-6">
-                            <img class="img-fluid h-100"
+                            <img class="img-fluid h-100" style="width: 350px ;"
                                 src="https://c4.wallpaperflare.com/wallpaper/644/828/996/the-sun-rays-light-island-wallpaper-preview.jpg"
                                 alt="">
                         </div>
                         <div class="col-6">
-                            <img class="img-fluid h-100"
+                            <img class="img-fluid h-100" style="width: 350px ;"
                                 src="https://c1.wallpaperflare.com/preview/347/286/516/prambanan-indonesia-temple-candy.jpg"
                                 alt="">
                         </div>
@@ -101,7 +114,7 @@ function rupiah($angka){
 <div class="container-fluid pb-5">
     <div class="container pb-5">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-out">
                 <div class="d-flex mb-4 mb-lg-0">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
                         style="height: 100px; width: 100px;">
@@ -109,11 +122,11 @@ function rupiah($angka){
                     </div>
                     <div class="d-flex flex-column">
                         <h5 class="">Competitive Pricing</h5>
-                        <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                        <p class="m-0">Harga yang kami tawarkan sesuai kualitas dan kebutuhan anda</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-out">
                 <div class="d-flex mb-4 mb-lg-0">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
                         style="height: 100px; width: 100px;">
@@ -121,19 +134,19 @@ function rupiah($angka){
                     </div>
                     <div class="d-flex flex-column">
                         <h5 class="">Best Services</h5>
-                        <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                        <p class="m-0">Kami selalu mengutamakan pelayanan yang berkualitas untuk kepuasan anda</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-out">
                 <div class="d-flex mb-4 mb-lg-0">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
                         style="height: 100px; width: 100px;">
                         <i class="fa fa-2x fa-globe text-white"></i>
                     </div>
                     <div class="d-flex flex-column">
-                        <h5 class="">Worldwide Coverage</h5>
-                        <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                        <h5 class="">Informative</h5>
+                        <p class="m-0">Kami menawarkan produk terbaik & layanan informasi untuk kebutuhan anda</p>
                     </div>
                 </div>
             </div>
@@ -146,36 +159,37 @@ function rupiah($angka){
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h6>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Layanan</h6>
             <h1>Destination & Travel Services</h1>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-out">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <a class="text-decoration-none" href="<?= base_url('hero/destination'); ?>">
                         <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                        <h5 class="mb-2">Destination</h5>
+                        <h5 class="mb-2">Destinasi Wisata</h5>
                     </a>
-                    <p class="m-0">Kamu Bisa melihat dan merasakan indahnya destinasi wisata Indonesia dengan Kami,
-                        ayo berpetualang..</p>
+                    <p class="m-0">Kamu bisa melihat dan merasakan indahnya destinasi wisata yang ingin kamu kunjungi
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-out">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <a class="text-decoration-none" href="<?= base_url('hero/paket'); ?>">
                         <i class="fa fa-2x fa-globe-asia mx-auto mb-4"></i>
-                        <h5 class="mb-2">Packages Traveling</h5>
+                        <h5 class="mb-2">Paket Wisata</h5>
                     </a>
-                    <p class="m-0">Membuat Travelingmu lebih mudah dengan memilih paket Traveling dari kami</p>
+                    <p class="m-0">Membuat Travelingmu lebih mudah dengan melihat Paket Wisata dari kami</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-out">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <a class="text-decoration-none" href="<?= base_url('hero/bookingmobil'); ?>">
                         <i class="fa fa-2x fa-car mx-auto mb-4"></i>
-                        <h5 class="mb-2">Car Booking</h5>
+                        <h5 class="mb-2">Sewa Mobil</h5>
                     </a>
-                    <p class="m-0">Kami siap mengantarkanmu ke penjuru Indonesia, pasti aman, pasti nyaman...</p>
+                    <p class="m-0">Kami siap mengantarkan kamu kemana saja, dengan berbagai macam mobil yang kami
+                        tawarkan</p>
                 </div>
             </div>
         </div>
@@ -192,7 +206,7 @@ function rupiah($angka){
         </div>
         <div class="row">
             <?php foreach($destinasi as $d) : ?>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-out">
                 <div class="destination-item position-relative overflow-hidden mb-2">
                     <img width="400" height="200" src="<?= base_url('assets/destination/'.$d['gambar_w']); ?>" alt="">
                     <a class="destination-overlay text-white text-decoration-none"
@@ -221,9 +235,9 @@ function rupiah($angka){
         </div>
         <div class="row">
             <?php foreach($paket as $p) : ?>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-out">
                 <div class="package-item bg-white mb-2">
-                    <a class="h5 text-decoration-none" href="<?= base_url('conpak/detail_paket/'.$p['id_paket']); ?>">
+                    <a class="h5 text-decoration-none" href="<?= base_url('hero/detail_paket/'.$p['id_paket']); ?>">
                         <img style="height: 200px; width: 350px;" class="img-fluid"
                             src="<?= base_url('assets/paket/'.$p['gambar_p']) ?>" alt="">
                     </a>
@@ -236,7 +250,7 @@ function rupiah($angka){
                                 Person</small>
                         </div>
                         <a class="h5 text-decoration-none"
-                            href="<?= base_url('conpak/detail_paket/'.$p['id_paket']); ?>"><?= $p['nama_paket']; ?></a><br>
+                            href="<?= base_url('hero/detail_paket/'.$p['id_paket']); ?>"><?= $p['nama_paket']; ?></a><br>
                         <div class="border-top mt-4 pt-4">
                             <small class="mt-3"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $p['durasi']; ?>
                                 days</small>
@@ -254,6 +268,11 @@ function rupiah($angka){
     </div>
 </div>
 <!-- Packages End -->
+<style>
+.crop {
+    object-fit: cover;
+}
+</style>
 
 
 <!-- Testimonial Start -->
@@ -266,8 +285,10 @@ function rupiah($angka){
         <div class="owl-carousel testimonial-carousel">
             <?php foreach($testimoni as $t) : ?>
             <div class="text-center pb-4">
-                <img class="img-fluid mx-auto" src="<?= base_url('assets/testimoni/'.$t['gambar_t']) ?>"
-                    style="width: 100px; height: 100px;">
+                <div class="container d-flex align-items-center justify-content-center">
+                    <img class="crop" src="<?= base_url('assets/testimoni/'.$t['gambar_t']) ?>"
+                        src="<?= base_url('assets/testimoni/bantul.jpg') ?>" style="width: 100px; height: 100px;">
+                </div>
                 <div class="testimonial-text bg-white p-4 mt-n5">
                     <p class="mt-5"><?= $t['pesan']; ?>
                     </p>

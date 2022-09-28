@@ -26,6 +26,13 @@ class Lokasi_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
+    public function getAllPaket()
+    {
+        $query = "SELECT *  FROM `tb_paket` JOIN `tb_paket_kategori`
+                  ON `tb_paket`.`id_kategori` = `tb_paket_kategori`.`id_kategori`";
+        return $this->db->query($query)->result_array();
+    }
+
     public function getTestimoni()
     {
         $query = "SELECT *  FROM `tb_testimoni` WHERE `status`=`Aktif` LIMIT 6";

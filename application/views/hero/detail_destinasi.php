@@ -2,10 +2,10 @@
 <div id="about" class="container-fluid py-5">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-lg-6" style="min-height: 500px;">
-                <div class="position-relative h-100">
+            <div class="col-lg-6">
+                <div class="position-relative">
                     <?php foreach($destinasi as $d) : ?>
-                    <img class="position-absolute w-100 h-100"
+                    <img class="position-relative w-100 h-100"
                         src="<?= base_url('assets/destination/'.$d->gambar_lok); ?>" style="object-fit: cover;">
                     <?php endforeach; ?>
                 </div>

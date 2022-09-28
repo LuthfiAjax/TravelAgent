@@ -5,15 +5,24 @@
     <meta charset="utf-8">
     <title><?= $title; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta
+        content="Wisata jogja murah,  reholtransport, rehol, sewa mobil, sewa mobil murah jogja, rehol sewa mobil, wisata rehol, wisata murah, jasa antar jemput, travel agen jogja, sewa mobil bandara "
+        name="keywords">
+    <meta
+        content="REHOL TRANSPORT menyediakan layanan Paket Wisata , Sewa Mobil dan Informasi Wisata. Kami memiliki tarif standar dan ramah di kantong, sehingga kalian bisa merasakan liburan bersama kami, dengan guide dan driver yang ramah dan berkualitas."
+        name="description">
+    <meta name="author" content="Luthfi, Jaxid, Ajax, Luthfi website, Ach Luthfi Imron Juhari">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?= base_url('assets/favicon/favicon.ico'); ?>">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -62,7 +71,8 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
                 <a href="<?= base_url(''); ?>" class="navbar-brand">
-                    <h1 class="m-0 text-primary"><span class="text-dark">REHOL</span>Transport</h1>
+                    <img src="<?= base_url('assets/slide/'); ?>logo.png" alt="" width="120" height="50"
+                        class="d-inline-block align-text-top">
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -70,18 +80,19 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="<?= base_url(); ?>" class="nav-item nav-link">Home</a>
-                        <a href="<?= base_url(); ?>#about" class="nav-item nav-link">About</a>
+                        <a href="<?= base_url(); ?>#about" class="nav-item nav-link">Tentang</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Layanan</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="<?= base_url('hero/paket'); ?>" class="dropdown-item">Packages Traveling</a>
-                                <a href="<?= base_url('hero/bookingmobil'); ?>" class="dropdown-item">Rental Mobil</a>
-                                <a href="<?= base_url('hero/destination'); ?>" class="dropdown-item">Destinasi
-                                    Wisata</a>
+                                <a href="<?= base_url('hero/paket'); ?>" class="dropdown-item">Paket Wisata</a>
+                                <a href="<?= base_url('hero/bookingmobil'); ?>" class="dropdown-item">Sewa Mobil</a>
+                                <a href="<?= base_url('hero/destination'); ?>" class="dropdown-item">Destinasi Wisata
+                                </a>
                             </div>
                         </div>
-                        <a href="package.html" class="nav-item nav-link">Blog</a>
-                        <a href="<?= base_url(); ?>#contact" class="nav-item nav-link">Contact</a>
+                        <a target="_blank" href="https://blog.reholtransport.com/" class="nav-item nav-link">Blog</a>
+                        <a href="<?= base_url(); ?>#contact" class="nav-item nav-link">Kontak</a>
+                        <a href="<?= base_url('hero/reviews'); ?>#contact" class="nav-item nav-link">Penilaian</a>
                     </div>
                 </div>
             </nav>

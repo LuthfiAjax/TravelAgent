@@ -2,8 +2,8 @@
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
-            <h1>Explore Destination with us</h1>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinasi Wisata</h6>
+            <h1>Referensi Wisata Untuk Kalian</h1>
         </div>
         <div class="row d-flex justify-content-center" style=" min-height: 60px;">
             <div class="col-md-9">
@@ -23,11 +23,17 @@
         </div>
         <div class="row">
             <?php foreach($destinasi as $d) : ?>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <style>
+                .cover {
+                    object-fit: cover;
+                }
+                </style>
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img width="400" height="200" src="<?= base_url('assets/destination/'.$d['gambar_w']); ?>" alt="">
+                    <img class="cover" width="400" height="200"
+                        src="<?= base_url('assets/destination/'.$d['gambar_w']); ?>" alt="">
                     <a class="destination-overlay text-white text-decoration-none"
-                        href="<?= base_url('hero/detail_destinasi/'.$d['id_wisata']); ?>">
+                        href="<?= base_url('destinasi-wista/rehol-transport/'.$d['id_wisata'].'/'.$d['slug'].'/'.$d['nama_lokasi']); ?>">
                         <h5 class="text-white"><?= $d['nama_wisata']; ?></h5>
                         <span><?= $d['nama_lokasi']; ?></span>
                     </a>

@@ -51,7 +51,7 @@ class Admin extends CI_Controller {
 		$data['kategori'] = $this->db->get('tb_paket_kategori')->result_array();
 
 		$this->load->model('Lokasi_model', 'paket');
-		$data['paket'] = $this->paket->getPaket();
+		$data['paket'] = $this->paket->getAllPaket();
 
 		$this->form_validation->set_rules('nama_paket', 'Nama Paket', 'required|trim');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi Paket', 'required|trim');
@@ -68,7 +68,11 @@ class Admin extends CI_Controller {
 				$this->load->view('rehol/template/footer');
 			}else{
 				$nama_paket = $this->input->post('nama_paket');
-				$deskripsi = $this->input->post('deskripsi');
+
+				// convert text untuk pinddah line
+				$text = $this->input->post('deskripsi');
+				$deskripsi = nl2br($text);
+
 				$id_kategori = $this->input->post('id_kategori');
 				$harga = $this->input->post('harga');
 				$durasi = $this->input->post('durasi');
@@ -78,8 +82,8 @@ class Admin extends CI_Controller {
 				if ($gambar_paket=''){
 
 				}else{
-					$config['allowed_types'] = 'gif|jpg|png|webp';
-					$config['max_size']      = '5120';
+					$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+					$config['max_size']      = '15360';
 					$config['upload_path'] = './assets/paket/';
 
 					$this->load->library('upload', $config);
@@ -128,15 +132,19 @@ class Admin extends CI_Controller {
 				$this->load->view('rehol/template/footer');
 			}else{
 				$nama_wisata = $this->input->post('nama_wisata');
-				$ket_wisata = $this->input->post('ket_wisata');
+
+				// convert text untuk pinddah line
+				$text = $this->input->post('ket_wisata');
+				$ket_wisata = nl2br($text);
+
 				$id_lokasi = $this->input->post('id_lokasi');
 				$gambar_w = $_FILES['gambar_w'];
 
 				if ($gambar_w=''){
 
 				}else{
-					$config['allowed_types'] = 'gif|jpg|png|webp';
-					$config['max_size']      = '5120';
+					$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
+					$config['max_size']      = '15360';
 					$config['upload_path'] = './assets/destination/';
 
 					$this->load->library('upload', $config);
@@ -185,7 +193,11 @@ class Admin extends CI_Controller {
 				$nama_mobil = $this->input->post('nama_mobil');
 				$kapasitas_orang = $this->input->post('kapasitas_orang');
 				$pemakaian = $this->input->post('pemakaian');
-				$deskripsi = $this->input->post('deskripsi');
+
+				// convert text untuk pinddah line
+				$text = $this->input->post('deskripsi');
+				$deskripsi = nl2br($text);
+
 				$harga = $this->input->post('harga');
 				$gambar_m = $_FILES['gambar_m'];
 
@@ -193,7 +205,7 @@ class Admin extends CI_Controller {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gambar tidak boleh kosong</div>');
 					redirect(base_url('admin/mobil'));
 				}else{
-					$config['allowed_types'] = 'gif|jpg|jpeg|png|webp';
+					$config['allowed_types'] = 'gif|jpg|jpeg|png|heif|hevc';
 					$config['max_size']      = '5120';
 					$config['upload_path'] = './assets/mobil/';
 

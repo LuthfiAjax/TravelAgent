@@ -9,10 +9,10 @@ function rupiah($angka){
 <div id="about" class="container-fluid py-5">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-lg-6" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute" style="max-width: 40rem;"
-                        src="<?= base_url('assets/mobil/mobil.webp'); ?>" style="object-fit: cover;">
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img class="img-fluid position-relative" src="<?= base_url('assets/mobil/mobil.webp'); ?>"
+                        style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
@@ -36,7 +36,7 @@ function rupiah($angka){
                     </div>
                     <?php 
                     $pesan = "*Hallo admin REHOLTransport*,
-                    Saya tertarik untuk menyewa Mobil ".$m['nama_mobil'];
+Saya tertarik untuk menyewa Mobil ".$m['nama_mobil'];
                     ?>
 
                     <a target="_blank" href="https://api.whatsapp.com/send/?phone=62811255661&text=
